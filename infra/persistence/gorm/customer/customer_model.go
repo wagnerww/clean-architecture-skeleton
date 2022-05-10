@@ -1,4 +1,4 @@
-package sql
+package customer
 
 type Customer struct {
 	ID          string

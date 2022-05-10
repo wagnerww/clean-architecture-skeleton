@@ -4,13 +4,13 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/wagnerww/go-clean-arch/infra/repository/customer/cache"
-	"github.com/wagnerww/go-clean-arch/infra/repository/customer/sql"
+	customerGorm "github.com/wagnerww/go-clean-arch/infra/persistence/gorm/customer"
+	customerRedis "github.com/wagnerww/go-clean-arch/infra/persistence/redis/customer"
 )
 
 func TestNewCustomer(t *testing.T) {
-	repoSQL := sql.NewCustomerRepository()
-	repoCache := cache.NewCustomerRepositoryCache()
+	repoSQL := customerGorm.NewCustomerRepository()
+	repoCache := customerRedis.NewCustomerRepositoryCache()
 
 	c := NewCreate(repoSQL, repoCache)
 

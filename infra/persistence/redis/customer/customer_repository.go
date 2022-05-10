@@ -1,4 +1,4 @@
-package cache
+package customer
 
 import (
 	"fmt"
